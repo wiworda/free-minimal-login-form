@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>หน้าเข้าสู่ระบบของฉัน</title><style>
+        /* ตั้งค่าพื้นหลังของทั้งหน้าจอ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a; /* สีพื้นหลังดำเทาดูหรูหรา */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        /* ตกแต่งกล่องการ์ด Login */
+        .login-card {
+            background-color: #2d2d2d; /* สีกล่องการ์ดที่สว่างกว่าพื้นหลัง */
+            padding: 40px;
+            border-radius: 16px; /* ทำขอบมนล้ำสมัย */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* ใส่เงาให้กล่องดูลอยขึ้นมา */
+            width: 320px;
+            text-align: center;
+        }
+
+        .login-card h2 {
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .login-card p {
+            color: #aaaaaa;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        /* ตกแต่งช่องกรอกข้อมูล (Input) */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #444444;
+            border-radius: 8px;
+            background-color: #3d3d3d;
+            color: white;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        /* เวลาเอาเมาส์ไปคลิกที่ช่องกรอก ให้มีเส้นขอบสีฟ้าเรืองแสง */
+        input:focus {
+            outline: none;
+            border-color: #00adb5;
+        }
+
+        /* ตกแต่งปุ่มกด */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00adb5; /* สีปุ่มฟ้านีออน */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s; /* เวลาเปลี่ยนสีให้มันดูนุ่มนวล */
+        }
+
+        /* เวลาเอาเมาส์ไปชี้ที่ปุ่ม ให้ปุ่มเปลี่ยนสีเข้มขึ้นเล็กน้อย */
+        button:hover {
+            background-color: #008c95;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- นี่คือกล่องการ์ดสำหรับใส่ฟอร์ม Login -->
+    <div class="login-card">
+        <h2>ยินดีต้อนรับกลับมา</h2>
+        <p>กรุณากรอกข้อมูลเพื่อเข้าสู่ระบบ</p>
+
+        <form>
+            <!-- ช่องกรอก Email -->
+            <input type="email" placeholder="อีเมลของคุณ" required>
+            
+            <!-- ช่องกรอก Password -->
+            <input type="password" placeholder="รหัสผ่าน" required>
+            
+            <!-- ปุ่มกด -->
+            <button type="submit">เข้าสู่ระบบ</button>
+        </form><script>
+            // 1. บอกให้โค้ดรู้จักฟอร์ม Login ของเรา
+            const form = document.querySelector('form');
+
+            // 2. ดักจับเหตุการณ์เมื่อผู้ใช้กดปุ่ม "เข้าสู่ระบบ"
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // สั่งไม่ให้หน้าเว็บรีเฟรชตัวเองตามธรรมชาติ
+
+                // ดึงค่าอีเมลที่ผู้ใช้พิมพ์เข้ามา
+                const emailInput = document.querySelector('input[type="email"]').value;
+
+                // สั่งให้มีป๊อปอัปแจ้งเตือนสวย ๆ เด้งขึ้นมา
+                alert('ยินดีด้วย! คุณกำลังเข้าสู่ระบบด้วยอีเมล: ' + emailInput);
+            });
+        </script>
+    </div>
+
+</body>
+</html>
